@@ -3,8 +3,7 @@ package com.example.accountskeeping
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ArrayAdapter
-import android.widget.ListView
+import android.widget.Button
 import android.widget.TextView
 import com.github.mikephil.charting.charts.PieChart
 import com.github.mikephil.charting.components.Description
@@ -13,22 +12,23 @@ import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
 import com.github.mikephil.charting.formatter.PercentFormatter
 import java.util.Calendar
+import android.content.Intent
 
-class MainActivity : AppCompatActivity() {
+class MonthActivity : AppCompatActivity() {
     lateinit var pieChart: PieChart
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_month)
 
-        val acuntList = ArrayList<String>()
-        acuntList.add("早餐")
-        acuntList.add("午餐")
-        acuntList.add("晚餐")
-        acuntList.add("加值")
-        acuntList.add("購物")
         val month_title: TextView = findViewById(R.id.month_title)
-        val listView: ListView = findViewById(R.id.lvAcunt)
+
+//        val acuntList = ArrayList<AccountItem>()
+//        val listView: ListView = findViewById(R.id.lvAcunt)
+//        listView.adapter = AccountArrayAdapter(this, acuntList)
+
+        val inbtn: Button = findViewById(R.id.btn_income)
+        val outbtn: Button = findViewById(R.id.btn_outcome)
 
         pieChart = findViewById(R.id.pieChart)
         val calendar = Calendar.getInstance() //日期時間
